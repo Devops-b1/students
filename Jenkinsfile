@@ -4,7 +4,8 @@ pipeline {
         stage ('pull code') {
             steps {
                 sh 'echo "code pulled suceessfully"'
-                git credentialsId: 'ssh-key-cred', url: 'git@github.com:Devops-b1/students.git'
+                git branch: 'main', url: 'https://github.com/Devops-b1/devsecops-jenkins-k8s-tf-sast-sonarcloud-repo.git'
+                sh 'ls'
             }
         }
         stage ('build stage') {
