@@ -77,7 +77,7 @@
 pipeline {
     agent any
     stages {
-        stage ('use variable') {
+        stage ('usevariable') {
             steps {
                 echo "jenkins url is ${JENKINS_URL}"
                 echo "jenkis home is ${JENKINS_HOME}"
