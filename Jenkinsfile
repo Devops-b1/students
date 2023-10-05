@@ -30,7 +30,7 @@
 
 pipeline {
     agent {
-        lable 'linux'
+        label 'linux'
     }
     stages {
         stage ('pull code') {
