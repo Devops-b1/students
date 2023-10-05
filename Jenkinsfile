@@ -75,7 +75,7 @@
 
 
 pipeline {
-    agent agent
+    agent any
     stages {
         stage ('use variable') {
             steps {
