@@ -61,7 +61,9 @@
 
 
 pipeline {
-    agent agent-1
+    agent {
+        label 'linux'
+    }
     stages {
         stage ('print variables') {
             steps {
