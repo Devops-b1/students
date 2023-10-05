@@ -60,15 +60,30 @@
 // }
 
 
+// pipeline {
+//     agent {
+//         label 'linux'
+//     }
+//     stages {
+//         stage ('print variables') {
+//             steps {
+//                 sh 'printenv'
+//             }
+//         }
+//     }
+// }
+
+
 pipeline {
-    agent {
-        label 'linux'
-    }
+    agent agent
     stages {
-        stage ('print variables') {
+        stage ('use variable') {
             steps {
-                sh 'printenv'
+                echo "jenkins url is ${JENKINS_URL}"
+                echo "jenkis home is ${JENKINS_HOME}"
+                echo "node name is ${NODE_NAME}"
             }
         }
     }
 }
+
