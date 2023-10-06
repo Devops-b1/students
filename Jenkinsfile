@@ -74,13 +74,29 @@
 // }
 
 
+//pipeline {
+//    agent any
+//    stages {
+//        stage ('usevariable') {
+//            steps {
+//                echo "jenkis home is ${JENKINS_HOME}"
+//                echo "node name is ${NODE_NAME}"
+//            }
+//        }
+//    }
+//}
+
 pipeline {
     agent any
+    environment {
+        customerip = "192.169.0.16" 
+    }
     stages {
         stage ('usevariable') {
             steps {
                 echo "jenkis home is ${JENKINS_HOME}"
                 echo "node name is ${NODE_NAME}"
+                echo "customerip is ${customerip}"
             }
         }
     }
