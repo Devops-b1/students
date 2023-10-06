@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+    stages {
+        stage ('Pull Code') {
+            steps {
+                git credentialsId: 'jenkins', url: 'git@github.com:monavyas082/students.git'
+                sh 'ls'
+            }
+         }
+        stage ('Build Code') {
+            steps {
+                sh 'echo "Code is Buid Successefull"'
+            }
+        }
+    }
+}
