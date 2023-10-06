@@ -79,7 +79,6 @@ pipeline {
     stages {
         stage ('usevariable') {
             steps {
-                echo "jenkins url is ${JENKINS_URL}"
                 echo "jenkis home is ${JENKINS_HOME}"
                 echo "node name is ${NODE_NAME}"
             }
