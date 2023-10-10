@@ -30,11 +30,6 @@
 
 pipeline {
     agent any
-    tools {
-        maven 'maven'
-        jdk 'java'
-    }
-
     stages {
         stage ('pull code') {
             steps {
@@ -43,17 +38,11 @@ pipeline {
                 sh 'ls'
             }
         }
-        stage('Initialize'){
-            steps{
-                echo "PATH = ${M2_HOME}/bin:${PATH}"
-                echo "M2_HOME = /opt/maven"
-            }
-        }
+        
         stage ('build stage') {
             steps {
-                dir("/var/lib/jenkins/workspace/demo-pipeline-1") {
-                sh 'mvn -B -DskipTests clean package'
-                }
+                sh 'apt install maven -y'
+                sh 'mvn clean package'
             }
         }
         stage ('test stage') {
