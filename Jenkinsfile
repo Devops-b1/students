@@ -48,7 +48,7 @@ pipeline {
         }
         stage ('test sonar analysis') {
             steps {
-//                sh 'mvn clean varify sonar:sonar -Dsonar.projectKey=second-org-b2-b3-key -Dsonar.organization=second-org-b2-b3-key -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=c8909b8bb08e38a054ba3b4ccb2673f46c2087e5'
+                sh 'mvn clean varify sonar:sonar -Dsonar.projectkey=second-org-b2-b3-key -Dsonar.organization=second-org-b2-b3-key -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=c8909b8bb08e38a054ba3b4ccb2673f46c2087e5'
                 echo "report save successfully"
             }
         }
